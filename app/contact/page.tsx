@@ -57,9 +57,9 @@ export default function ContactPage() {
       title: "Address",
       content: (
         <>
-          123 Tech Street, Suite 100
+          Greater Kolkata
           <br />
-          San Francisco, CA 94107
+          West Bengal, India
         </>
       ),
     },
@@ -72,15 +72,15 @@ export default function ContactPage() {
         </Link>
       ),
     },
-    {
-      icon: <Phone className="h-6 w-6 text-indigo-400" />,
-      title: "Phone",
-      content: (
-        <Link href="tel:+1234567890" className="hover:text-indigo-400 transition-colors duration-300">
-          +1 (234) 567-890
-        </Link>
-      ),
-    },
+    // {
+    //   icon: <Phone className="h-6 w-6 text-indigo-400" />,
+    //   title: "Phone",
+    //   content: (
+    //     <Link href="tel:+1234567890" className="hover:text-indigo-400 transition-colors duration-300">
+    //       +1 (234) 567-890
+    //     </Link>
+    //   ),
+    // },
   ]
 
   return (
@@ -255,7 +255,15 @@ export default function ContactPage() {
               >
                 {/* This would be a map in a real implementation */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-500">Interactive map would be displayed here</p>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14747.548527583498!2d88.36126605!3d22.47087535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027055183c3fc3%3A0xe05ad0716efd5ac4!2sBansdroni%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1749160934535!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </motion.div>
             </motion.div>

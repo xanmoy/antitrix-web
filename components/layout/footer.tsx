@@ -6,8 +6,14 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black border-t border-gray-800">
-      <div className="container px-4 py-12 md:px-6 md:py-16 lg:py-20">
+    <footer className="relative w-full bg-black border-t border-gray-800 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-purple-900/10" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      </div>
+
+      <div className="container relative z-10 px-4 py-12 md:px-6 md:py-16 lg:py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,20 +27,37 @@ export default function Footer() {
                 ANTITRIX
               </span>
             </Link>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 leading-relaxed">
               Transforming ideas into digital realities with cutting-edge technology solutions.
             </p>
             <div className="flex space-x-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <motion.div key={index} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                  <Link href="#" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+              {[
+                // { Icon: Facebook, href: "#", label: "Facebook" },
+                // { Icon: Twitter, href: "#", label: "Twitter" },
+                { Icon: Instagram, href: "https://www.instagram.com/antitrix.corp/", label: "Instagram" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/company/antitrix/", label: "LinkedIn" },
+              ].map(({ Icon, href, label }, index) => (
+                <motion.div
+                  key={label}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    href={href}
+                    className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block p-2"
+                    aria-label={label}
+                  >
                     <Icon className="h-5 w-5" />
-                    <span className="sr-only">Social Media</span>
                   </Link>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+
           {[
             {
               title: "Services",
@@ -57,8 +80,9 @@ export default function Footer() {
             {
               title: "Contact",
               links: [
-                { href: "mailto:info@antitrix.com", label: "info@antitrix.com" },
-                { href: "tel:+1234567890", label: "+1 (234) 567-890" },
+                { href: "mailto:antitrixcorp@proton.me", label: "antitrixcorp@proton.me" },
+                // { href: "tel:+1234567890", label: "+1 (234) 567-890" },
+                { href: "#", label: "Greater Kolkata, West Bengal, India" },
               ],
             },
           ].map((section, sectionIndex) => (
@@ -82,7 +106,7 @@ export default function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-indigo-400 transition-colors duration-300"
+                      className="text-sm text-gray-400 hover:text-indigo-400 transition-colors duration-300 block py-1"
                     >
                       {link.label}
                     </Link>
@@ -92,6 +116,7 @@ export default function Footer() {
             </motion.div>
           ))}
         </div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

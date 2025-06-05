@@ -10,27 +10,33 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: "Tanmoy Ganguly",
-      role: "CEO & Founder",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "With over 15 years of experience in technology leadership, Alex founded ANTITRIX with a vision to help businesses leverage technology for growth.",
+      role: "Cheif Executive Officer",
+      image: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749152180/WhatsApp_Image_2025-03-22_at_14.55.44_tmshlh.jpg",
+      bio: "Tanmoy is a visionary tech leader with a passion for innovation, steering Antitrix to deliver fast, scalable web and mobile solutions that empower businesses.",
     },
     {
       name: "Sreejan Naru",
-      role: "CTO",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Sarah brings deep technical expertise in software architecture and emerging technologies, leading our development teams to deliver innovative solutions.",
+      role: "Chief Technology Officer",
+      image: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749152415/1667393879236_noa165.jpg",
+      bio: "Sreejan is a seasoned technologist with a passion for innovation, leading our engineering team to build cutting-edge solutions that empower businesses.",
     },
     {
       name: "Avijit Sarkar",
-      role: "Creative Director",
+      role: "Vice President of Engineering",
       image: "/placeholder.svg?height=300&width=300",
-      bio: "Michael combines artistic vision with user-centered design principles to create digital experiences that are both beautiful and functional.",
+      bio: "Avijit is a dynamic engineering leader with a track record of delivering high-quality software solutions, ensuring our projects are executed with excellence and efficiency.",
     },
     {
       name: "Rithuraj Debnath",
-      role: "Head of Client Services",
-      image: "/placeholder.svg?height=300&width=300",
-      bio: "Priya ensures our clients receive exceptional service throughout their journey with ANTITRIX, from initial consultation to project delivery and beyond.",
+      role: "Human Resources Manager",
+      image: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749152545/1744110134741_wvod2l.jpg",
+      bio: "Rithuraj is a dedicated HR professional, fostering a positive and inclusive workplace culture at Antitrix, ensuring our team thrives and grows together.",
+    },
+    {
+      name: "Ayush Mukherjee",
+      role: "Business Development Manager",
+      image: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749152915/1683448500229_kidli6.jpg",
+      bio: "Ayush is a strategic thinker and business development expert, driving growth and forging partnerships that expand Antitrix's reach and impact in the tech industry.",
     },
   ]
 
@@ -124,7 +130,7 @@ export default function AboutPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-3xl" />
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="https://res.cloudinary.com/da0a9gxjs/image/upload/v1749153192/img2_ekl6dn.jpg"
                 fill
                 alt="ANTITRIX Office"
                 className="object-cover rounded-2xl border border-indigo-500/30 relative z-10"

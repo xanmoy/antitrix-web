@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
 import { motion } from "framer-motion"
+import React from "react"
 
 interface ServicePageProps {
   params: {
@@ -13,15 +14,15 @@ interface ServicePageProps {
   }
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const { service } = params
+export default function ServicePage({ params }: { params: Promise<{ service: string }> }) {
+  const { service } = React.use(params)
 
   // Service data - in a real app, this would come from a database or API
   const services = {
     "web-development": {
       title: "Web Development",
       description: "Custom websites and web applications built with the latest technologies.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159273/shutter-speed-PBTEeIadS20-unsplash_ntj59j.jpg",
       details: [
         "Responsive website design and development",
         "Progressive Web Applications (PWAs)",
@@ -41,7 +42,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     "app-development": {
       title: "App Development",
       description: "Native and cross-platform mobile applications for iOS and Android.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159343/lxrcbsv-cOOUKEBpnIw-unsplash_ncaeqb.jpg",
       details: [
         "Native iOS and Android development",
         "Cross-platform development with React Native",
@@ -61,7 +62,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     devops: {
       title: "DevOps",
       description: "Streamline your development and operations with automated workflows.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159649/growtika-wLknZfsKmxQ-unsplash_ohqfdi.jpg",
       details: [
         "CI/CD pipeline implementation",
         "Infrastructure as Code (IaC)",
@@ -81,7 +82,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     "ui-ux": {
       title: "UI/UX Design",
       description: "User-centered design that enhances user experience and engagement.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159516/mehdi-mirzaie-kUe-dIOu5FE-unsplash_txfk2y.jpg",
       details: [
         "User research and persona development",
         "Information architecture",
@@ -121,7 +122,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     "database-solutions": {
       title: "Database Solutions",
       description: "Efficient database design, migration, and optimization services.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159767/growtika-ahgsuFHlIFo-unsplash_kefofe.jpg",
       details: [
         "Database architecture and design",
         "Data migration and integration",
@@ -141,7 +142,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     "performance-optimization": {
       title: "Performance Optimization",
       description: "Improve the speed and efficiency of your existing applications.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159823/growtika-183Yxo3vsGY-unsplash_pq3lre.jpg",
       details: [
         "Performance auditing and analysis",
         "Front-end optimization",
@@ -161,7 +162,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     "analytics-reporting": {
       title: "Analytics & Reporting",
       description: "Data visualization and reporting tools to help you make informed decisions.",
-      banner: "/placeholder.svg?height=400&width=1200",
+      banner: "https://res.cloudinary.com/da0a9gxjs/image/upload/v1749159857/deng-xiang--WXQm_NTK0U-unsplash_hy9sij.jpg",
       details: [
         "Custom dashboard development",
         "Data visualization implementation",
