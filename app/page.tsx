@@ -153,7 +153,7 @@ export default function Home() {
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-16 w-full max-w-4xl"
             >
               {[
-                { number: "50+", label: "Projects Delivered", icon: "🚀" },
+                { number: "20+", label: "Projects Delivered", icon: "🚀" },
                 { number: "98%", label: "Client Satisfaction", icon: "⭐" },
                 { number: "5+", label: "Years Experience", icon: "💎" },
               ].map((stat, index) => (
@@ -622,7 +622,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               {
-                number: "50+",
+                number: "20+",
                 label: "Projects Completed",
                 description: "Successful projects delivered across various industries",
               },
@@ -637,7 +637,7 @@ export default function Home() {
                 description: "Average return on investment for our clients",
               },
               {
-                number: "5M+",
+                number: "12k+",
                 label: "Users Reached",
                 description: "Combined user base of platforms we've built",
               },
