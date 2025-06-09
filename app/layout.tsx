@@ -8,9 +8,14 @@ import Footer from "@/components/layout/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
+
+
 export const metadata: Metadata = {
   title: "ANTITRIX | Modern Tech Services",
   description: "Professional technology services for web development, app development, DevOps, and UI/UX design.",
+  icons: {
+    icon: "/favicon.ico", 
+  },
   metadataBase: new URL("https://antitrix.xanmoy.in"),
 
   openGraph: {
@@ -20,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "ANTITRIX",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://antitrix.xanmoy.in/og-image.png",
         width: 1200,
         height: 630,
         alt: "Antitrix - OG Preview",
