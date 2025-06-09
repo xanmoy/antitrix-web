@@ -47,6 +47,32 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://antitrix.xanmoy.in#organization",
+              "url": "https://antitrix.xanmoy.in",
+              "logo": "https://antitrix.xanmoy.in/logo.png",
+              "name": "ANTITRIX",
+              "description": "ANTITRIX is a modern technology services company specializing in web development, app development, DevOps, and UI/UX design.",
+              "sameAs": [
+                
+                "https://instagram.com/antitrix.corp/",
+                "https://www.linkedin.com/in/antitrix",
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "antitrix.corp@proton.me",
+                "contactType": "Customer Support",
+                "areaServed": "IN",
+                "availableLanguage": "English",
+              },
+            })
+          }}
+        />
         {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}> */}
           <div className="flex min-h-screen flex-col">
             <Navbar />
