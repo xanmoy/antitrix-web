@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { usePathname } from "next/navigation"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const isActive = (path: string) => {
-    return pathname === path
-  }
+    return pathname === path;
+  };
 
   return (
     <motion.header
@@ -32,7 +32,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"
           >
-            ANTITRIX
+            Antitrix
           </motion.span>
         </Link>
         <nav className="hidden md:flex gap-8">
@@ -40,6 +40,10 @@ export default function Navbar() {
             { href: "/", label: "Home" },
             { href: "/services", label: "Services" },
             { href: "/work", label: "Work" },
+            {
+              href: "/pricing",
+              label: "Pricing",
+            },
             { href: "/about", label: "About" },
             { href: "/contact", label: "Contact" },
           ].map((item, index) => (
@@ -52,7 +56,9 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 className={`text-sm font-medium transition-colors relative ${
-                  isActive(item.href) ? "text-indigo-400" : "text-gray-300 hover:text-indigo-400"
+                  isActive(item.href)
+                    ? "text-indigo-400"
+                    : "text-gray-300 hover:text-indigo-400"
                 }`}
               >
                 {item.label}
@@ -67,14 +73,18 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Link href="/contact">
+          <Link href="/schedule-call">
             <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 h-10 border-0 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-300">
-              Get in Touch
+              Schedule a Call
             </Button>
           </Link>
         </div>
         <button className="block md:hidden text-gray-300" onClick={toggleMenu}>
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
       {isMenuOpen && (
@@ -89,6 +99,10 @@ export default function Navbar() {
               { href: "/", label: "Home" },
               { href: "/services", label: "Services" },
               { href: "/work", label: "Work" },
+              {
+                href: "/pricing",
+                label: "Pricing",
+              },
               { href: "/about", label: "About" },
               { href: "/contact", label: "Contact" },
             ].map((item) => (
@@ -103,14 +117,14 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={toggleMenu}>
+            <Link href="/schedule-call" onClick={toggleMenu}>
               <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 mt-2 border-0">
-                Get in Touch
+                Schedule a Call
               </Button>
             </Link>
           </nav>
         </motion.div>
       )}
     </motion.header>
-  )
+  );
 }

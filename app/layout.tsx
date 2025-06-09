@@ -11,7 +11,32 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "ANTITRIX | Modern Tech Services",
   description: "Professional technology services for web development, app development, DevOps, and UI/UX design.",
-    generator: 'v0.dev'
+  metadataBase: new URL("https://antitrix.xanmoy.in"),
+
+  openGraph: {
+    title: "ANTITRIX | Modern Tech Services",
+    description: "Professional technology services for web development, app development, DevOps, and UI/UX design.",
+    url: "https://antitrix.xanmoy.in",
+    siteName: "ANTITRIX",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Antitrix - OG Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "ANTITRIX | Modern Tech Services",
+    description: "Professional technology services for web development, app development, DevOps, and UI/UX design.",
+    images: ["/og-image.png"],
+    creator: "@antitrix_corp",
+  },
 }
 
 export default function RootLayout({
